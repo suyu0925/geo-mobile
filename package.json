@@ -1,0 +1,51 @@
+{
+  "name": "geo-mobile",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build && npm run tslint",
+    "build": "npm run build-ts && npm run copy-asserts",
+    "build-ts": "tsc -p . && npm run copy-dts",
+    "copy-asserts": "cpx \"./src/lib/mobilemap.json\" \"./dist/lib/mobilemap.json\"",
+    "copy-dts": "cpx \"./index.d.ts\" \"./dist\"",
+    "test": "jest",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suyu0925/geo-mobile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suyu0925/geo-mobile/issues"
+  },
+  "homepage": "https://github.com/suyu0925/geo-mobile#readme",
+  "devDependencies": {
+    "@types/jest": "^19.2.4",
+    "@types/node": "^7.0.31",
+    "cpx": "^1.5.0",
+    "jest": "^20.0.4",
+    "ts-jest": "^20.0.6",
+    "tslint": "^5.4.3",
+    "typescript": "^2.3.4"
+  },
+  "dependencies": {
+    "location-china": "^0.1.0",
+    "mobile-operator": "^0.1.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  }
+}
