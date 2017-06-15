@@ -1,13 +1,13 @@
 {
   "name": "geo-mobile",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "start": "npm run build && npm run tslint",
     "build": "npm run build-ts && npm run copy-asserts",
     "build-ts": "tsc -p . && npm run copy-dts",
-    "copy-asserts": "cpx \"./src/lib/mobilemap.json\" \"./dist/lib/mobilemap.json\"",
+    "copy-asserts": "cpx \"./src/lib/mobilemap.json\" \"./dist/lib/\"",
     "copy-dts": "cpx \"./index.d.ts\" \"./dist\"",
     "test": "jest",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
@@ -33,7 +33,7 @@
     "typescript": "^2.3.4"
   },
   "dependencies": {
-    "location-china": "^0.1.0",
+    "location-china": "^0.1.2",
     "mobile-operator": "^0.1.1"
   },
   "jest": {
